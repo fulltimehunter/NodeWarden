@@ -36,7 +36,7 @@ English：[`README_EN.md`](./README_EN.md)
 | Send | ✅ | ✅ | 已支持文本 Send 与文件 Send |
 | 多用户 | ✅ | ✅ | 完整的用户管理，邀请机制 |
 | 组织/集合/成员权限 | ✅ | ❌ | 没必要实现 |
-| 登录 2FA（TOTP/WebAuthn/Duo/Email） | ✅ | ⚠️ 部分支持 | 仅支持 TOTP（通过 `TOTP_SECRET`） |
+| 登录 2FA（TOTP/WebAuthn/Duo/Email） | ✅ | ⚠️ 部分支持 | 仅支持用户级 TOTP |
 | SSO / SCIM / 企业目录 | ✅ | ❌ | 没必要实现 |
 | 紧急访问 | ✅ | ❌ | 没必要实现 |
 | 管理后台 / 计费订阅 | ✅ | ❌ | 纯免费 |

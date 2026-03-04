@@ -36,7 +36,7 @@
 | Multi-user | ✅ | ✅ | Full user management with invitation mechanism |
 | Send | ✅ | ✅ | Text Send and File Send are supported |
 | Organizations / Collections / Member roles | ✅ | ❌ | Not necessary to implement |
-| Login 2FA (TOTP/WebAuthn/Duo/Email) | ✅ | ⚠️ Partial | TOTP-only  via `TOTP_SECRET` |
+| Login 2FA (TOTP/WebAuthn/Duo/Email) | ✅ | ⚠️ Partial | User-level TOTP only |
 | SSO / SCIM / Enterprise directory | ✅ | ❌ | Not necessary to implement |
 | Emergency access | ✅ | ❌ | Not necessary to implement |
 | Admin console / Billing & subscription | ✅ | ❌ | Free only |
