@@ -1032,6 +1032,79 @@ input[type='file'].input::file-selector-button:hover {
   gap: 12px;
 }
 
+.import-export-page {
+  display: grid;
+  gap: 12px;
+}
+
+.import-export-hero {
+  margin-bottom: 0;
+}
+
+.import-export-hero h3 {
+  margin: 0 0 8px 0;
+}
+
+.import-export-hero-sub {
+  margin: 0;
+  color: #5f6f85;
+  line-height: 1.5;
+}
+
+.import-export-feature-grid {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.import-export-feature-item {
+  border: 1px solid #d9e4f2;
+  border-radius: 10px;
+  background: #f7faff;
+  padding: 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+}
+
+.import-export-feature-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: 1px solid #cbdcf7;
+  background: #e9f1ff;
+  color: #1d4ed8;
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.import-export-feature-item strong {
+  display: block;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.import-export-feature-item p {
+  margin: 4px 0 0 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.import-export-panels {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  align-items: start;
+}
+
+.import-export-panel h3 {
+  margin: 0 0 6px 0;
+}
+
 .field-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1507,6 +1580,11 @@ input[type='file'].input::file-selector-button:hover {
   }
   .totp-grid,
   .field-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .import-export-feature-grid,
+  .import-export-panels {
     grid-template-columns: 1fr;
   }
 

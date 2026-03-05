@@ -2,7 +2,7 @@
 import { argon2idAsync } from '@noble/hashes/argon2.js';
 import { strFromU8, unzipSync } from 'fflate';
 import { BlobReader, Uint8ArrayWriter, ZipReader, configure as configureZipJs } from '@zip.js/zip.js';
-import { Download, FileUp } from 'lucide-preact';
+import { Archive, ArrowLeftRight, Download, FileJson, FileUp } from 'lucide-preact';
 import ConfirmDialog from '@/components/ConfirmDialog';
 import type { CiphersImportPayload } from '@/lib/api';
 import {
@@ -581,8 +581,43 @@ export default function ImportPage({ onImport, onImportEncryptedRaw, accountKeys
   }
 
   return (
-    <div className="stack">
-      <section className="card">
+    <div className="import-export-page">
+      <section className="card import-export-hero">
+        <h3>{t('txt_import_export_title')}</h3>
+        <p className="import-export-hero-sub">{t('txt_import_export_feature_intro')}</p>
+        <div className="import-export-feature-grid">
+          <article className="import-export-feature-item">
+            <span className="import-export-feature-icon">
+              <Archive size={16} />
+            </span>
+            <div>
+              <strong>{t('txt_import_export_feature_bw_zip_title')}</strong>
+              <p>{t('txt_import_export_feature_bw_zip_desc')}</p>
+            </div>
+          </article>
+          <article className="import-export-feature-item">
+            <span className="import-export-feature-icon">
+              <FileJson size={16} />
+            </span>
+            <div>
+              <strong>{t('txt_import_export_feature_nodewarden_json_title')}</strong>
+              <p>{t('txt_import_export_feature_nodewarden_json_desc')}</p>
+            </div>
+          </article>
+          <article className="import-export-feature-item">
+            <span className="import-export-feature-icon">
+              <ArrowLeftRight size={16} />
+            </span>
+            <div>
+              <strong>{t('txt_import_export_feature_compat_title')}</strong>
+              <p>{t('txt_import_export_feature_compat_desc')}</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <div className="import-export-panels">
+      <section className="card import-export-panel">
         <h3>{t('txt_import')}</h3>
         <p className="muted" style={{ textAlign: 'left', marginBottom: 12 }}>
           {t('txt_import_vault_data_hint')}
@@ -665,7 +700,7 @@ export default function ImportPage({ onImport, onImportEncryptedRaw, accountKeys
         </div>
       </section>
 
-      <section className="card">
+      <section className="card import-export-panel">
         <h3>{t('txt_export')}</h3>
         <p className="muted" style={{ textAlign: 'left', marginBottom: 12 }}>
           {t('txt_export_vault_data_hint')}
@@ -735,6 +770,7 @@ export default function ImportPage({ onImport, onImportEncryptedRaw, accountKeys
           </button>
         </div>
       </section>
+      </div>
 
       <ConfirmDialog
         open={exportAuthDialogOpen}
