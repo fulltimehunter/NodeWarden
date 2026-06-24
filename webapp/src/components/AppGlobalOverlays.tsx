@@ -12,6 +12,7 @@ export interface AppConfirmState {
   cancelText?: string;
   hideCancel?: boolean;
   onConfirm: () => void;
+  onCancel?: () => void;
 }
 
 interface AppGlobalOverlaysProps {
@@ -49,7 +50,7 @@ export default function AppGlobalOverlays(props: AppGlobalOverlaysProps) {
         cancelText={props.confirm?.cancelText}
         hideCancel={props.confirm?.hideCancel}
         onConfirm={() => props.confirm?.onConfirm()}
-        onCancel={props.onCancelConfirm}
+        onCancel={props.confirm?.onCancel || props.onCancelConfirm}
       />
 
       <ConfirmDialog
@@ -76,7 +77,7 @@ export default function AppGlobalOverlays(props: AppGlobalOverlaysProps) {
           <span>{t('txt_totp_code')}</span>
           <input className="input" value={props.totpCode} autoComplete="one-time-code" onInput={(e) => props.onTotpCodeChange((e.currentTarget as HTMLInputElement).value)} />
         </label>
-        <label className="check-line" style={{ marginBottom: 0 }}>
+        <label className="check-line check-line-compact">
           <input type="checkbox" checked={props.rememberDevice} onChange={(e) => props.onRememberDeviceChange((e.currentTarget as HTMLInputElement).checked)} />
           <span>{t('txt_trust_this_device_for_30_days')}</span>
         </label>
